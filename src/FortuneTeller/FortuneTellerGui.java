@@ -55,9 +55,6 @@ public class FortuneTellerGui extends JFrame implements ActionListener {
         getContentPane().add(mainPanel);
         calculateButton.addActionListener(this);
         calculateButton.setBackground(new Color(221, 209, 199));
-//        calculateButton.setBounds(0,0,50,50);
-//        setDefaultLookAndFeelDecorated(true);
-
     }
     private void alert(String message) {
         JOptionPane.showMessageDialog(this, message, "Error!", JOptionPane.ERROR_MESSAGE);
@@ -68,16 +65,16 @@ public class FortuneTellerGui extends JFrame implements ActionListener {
             if (!fortuneTeller.setName(nameField.getText())) {
                 valid = false;
                 alert("Invalid name!");
-            } else if (!fortuneTeller.setIncome(DOBField.getText())) {
+            } else if (!fortuneTeller.setDOB(DOBField.getText())) {
                 valid = false;
                 alert("Invalid Date of birth! Must not contain anything but numbers.");
-            } else if (!fortuneTeller.setLocation(ZODIACSIGNField.getText())) {
+            } else if (!fortuneTeller.setZodiacSign(ZODIACSIGNField.getText())) {
                 valid = false;
                 alert("Invalid Zodiac sign!");
-            } else if (!fortuneTeller.setAge(MOBField.getText())) {
+            } else if (!fortuneTeller.setMOB(MOBField.getText())) {
                 valid = false;
                 alert("Invalid Month of birth! Must not contain anything but numbers.");
-            } else if (!fortuneTeller.setHeight(YOBField.getText())) {
+            } else if (!fortuneTeller.setYOB(YOBField.getText())) {
                 valid = false;
                 alert("Invalid Year of birth! Must not contain anything but numbers.");
             }

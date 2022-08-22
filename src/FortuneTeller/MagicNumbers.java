@@ -3,14 +3,14 @@ package FortuneTeller;
 public class MagicNumbers {
 
     private String name;
-    private int income;
-    private String location;
-    private int age;
-    private int height;
+    private int DOB;
+    private String ZodiacSign;
+    private int MOB;
+    private int YOB;
 
     public int calculateA() {
         int numberOfNames = name.length() - name.replaceAll(" ", "").length() + 1;
-        int result = age + numberOfNames;
+        int result = MOB + numberOfNames;
         while(result >= 10){
             result -= 7;
         }
@@ -18,8 +18,8 @@ public class MagicNumbers {
     }
 
     public int calculateB() {
-        int numberOfCharacters = location.length();
-        int result = income + numberOfCharacters;
+        int numberOfCharacters = ZodiacSign.length();
+        int result = DOB + numberOfCharacters;
         while(result >= 10){
             result -= 7;
         }
@@ -27,7 +27,7 @@ public class MagicNumbers {
     }
 
     public int calculateC() {
-        int result = calculateA() + calculateB() - height;
+        int result = calculateA() + calculateB() - YOB;
         while(result < 0){
             result += 10;
         }
@@ -42,41 +42,41 @@ public class MagicNumbers {
         else{
             result += calculateC();
         }
-        result -= income;
+        result -= DOB;
         while(result < 0){
             result += 10;
         }
         return result;
     }
 
-    public int calculateE() {
-        double result = (age * income) * income ;
-        result *= height;
-        result = Math.sqrt(result);
-        while(result >= 10){
-            result /= 2;
-        }
-        result = Math.round(result);
-        return (int)result;
-    }
+//    public int calculateE() {
+//        double result = (MOB * DOB) * DOB;
+//        result *= YOB;
+//        result = Math.sqrt(result);
+//        while(result >= 10){
+//            result /= 2;
+//        }
+//        result = Math.round(result);
+//        return (int)result;
+//    }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setIncome(int income) {
-        this.income = income;
+    public void setDOB(int DOB) {
+        this.DOB = DOB;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setZodiacSign(String zodiacSign) {
+        this.ZodiacSign = zodiacSign;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setMOB(int MOB) {
+        this.MOB = MOB;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
+    public void setYOB(int YOB) {
+        this.YOB = YOB;
     }
 }

@@ -2,6 +2,7 @@ package FortuneTeller;
 
 public class FortuneTeller {
     MagicNumbers magicNumbers;
+
     FortuneTellerGui fortuneTellerGui;
     Translator translator;
     public String calculate() {
@@ -10,8 +11,8 @@ public class FortuneTeller {
         b = magicNumbers.calculateB();
         c = magicNumbers.calculateC();
         d = magicNumbers.calculateD();
-        e = magicNumbers.calculateE();
-        String fortune = translator.getFortune(a, b, c, d, e);
+        //e = magicNumbers.calculateE();
+        String fortune = translator.getFortune(a, b, c, d);
         return fortune;
     }
 
@@ -42,37 +43,37 @@ public class FortuneTeller {
         return output;
     }
 
-    public boolean setIncome(String income) {
-        Integer incomeValue = convertToInteger(income);
-        if (incomeValue == null) {
+    public boolean setDOB(String DOB) {
+        Integer DOBValue = convertToInteger(DOB);
+        if (DOBValue == null) {
             return false;
         } else {
-            magicNumbers.setIncome(incomeValue);
-            return incomeValue<=10_000_000;
+            magicNumbers.setDOB(DOBValue);
+            return DOBValue<=10_000_000;
         }
     }
 
-    public boolean setLocation(String location) {
-        magicNumbers.setLocation(location);
-        return location != null;
+    public boolean setZodiacSign(String ZodiacSign) {
+        magicNumbers.setZodiacSign(ZodiacSign);
+        return ZodiacSign != null;
     }
 
-    public boolean setAge(String age) {
-        Integer ageValue = convertToInteger(age);
-        if (ageValue == null) {
+    public boolean setMOB(String MOB) {
+        Integer MOBValue = convertToInteger(MOB);
+        if (MOBValue == null) {
             return false;
         } else {
-            magicNumbers.setAge(ageValue);
+            magicNumbers.setMOB(MOBValue);
             return true;
         }
     }
 
-    public boolean setHeight(String height) {
-        Integer heightValue = convertToInteger(height);
-        if (heightValue == null) {
+    public boolean setYOB(String YOB) {
+        Integer YOBValue = convertToInteger(YOB);
+        if (YOBValue == null) {
             return false;
         } else {
-            magicNumbers.setHeight(heightValue);
+            magicNumbers.setYOB(YOBValue);
             return true;
         }
     }
